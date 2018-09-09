@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- <h1 id="texto" saludo="hola">
+    Hola con h1
+    <div class="es_clase">
+      Aqui va una clase
+    </div>
+  </h1> -->
+
+  <script type="text/javascript">
+
+    // let texto = document.querySelector('#texto');
+    // console.log(texto);
+    //
+    // let nombre_id = texto.getAttribute('saludo');
+    // console.log(nombre_id);
+    //
+    // texto.setAttribute('class', 'red');
+    //
+    // let mi_clase = document.querySelector('.es_clase');
+    // console.log(mi_clase);
+    //
+    // texto.removeChild(mi_clase);
+
+    // let new_elem = document.createElement('div');
+    // new_elem.innerHTML = 'hola';
+    // new_elem.style.color = 'pink';
+    // console.log(new_elem);
+    //
+    // const click = () => {
+    //   alert('me dolio');
+    // }
+    // new_elem.onclick = click; // Llamada a referencia, no a funcion
+
+// MAIN ELEMENTS
+    let body = document.querySelector('body');
+    let h1 = document.createElement('h1');
+    let h2 = document.createElement('h2');
+    let h3 = document.createElement('h3');
+
+// BR
+    const crearBr = (elem) => {
+      let br = document.createElement('br');
+      elem.appendChild(br);
+    }
+
+// HR
+    const crearHr = (elem) => {
+      let hr = document.createElement('hr');
+      elem.appendChild(hr);
+    }
+
+// SEP
+    const crearSep = (elem) => {
+      crearBr(elem);
+      crearHr(elem);
+      crearBr(elem);
+    }
+
+// LISTS
+    const crearLi = (elem, texto) => {
+      let li = document.createElement('li');
+      li.innerHTML = texto;
+      elem.appendChild(li);
+    }
+    let ul = document.createElement('ul');
+    let ol = document.createElement('ol');
+
+// IMG
+    let gato = document.createElement('img');
+
+// A
+    let a = document.createElement('a');
+    let a2 = document.createElement('a');
+
+    h1.innerHTML = 'Bienvenidos!';
+    body.appendChild(h1);
+
+    h2.innerHTML = 'A este curso';
+    body.appendChild(h2);
+
+    h3.innerHTML = 'Sobre HTML';
+    body.appendChild(h3);
+
+    crearSep(body);
+
+    body.appendChild(ul);
+    for(let i = 0; i < 3; ++i) {
+      crearLi(ul, 'Tarea');
+    }
+
+    body.appendChild(ol);
+    for(let i = 0; i < 3; ++i) {
+      crearLi(ol, 'Tarea');
+    }
+
+    crearSep(body);
+
+    gato.setAttribute('src',  'https://static.boredpanda.com/blog/wp-content/uploads/2018/04/5acb63d83493f__700-png.jpg');
+    body.appendChild(gato);
+
+    crearSep(body);
+
+    a.innerHTML = 'Ir a Google';
+    a2.innerHTML = 'Abrir Google en otra pestaña';
+    body.appendChild(a);
+
+
+
+  </script>
+</body>
+</html>
