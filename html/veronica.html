@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title></title>
+        <body>
+
+        </body>
+    </head>
+    <body>
+        <script type ="text/javascript">
+        let body = document.querySelector('body');
+        const Add_ul = (num, type) => {
+            let ul = document.createElement(type);
+            for (let x=0; x<num; x++)
+            {
+                let li = document.createElement('li');
+                li.innerText='Tarea';
+                ul.appendChild(li);
+            }
+            body.appendChild(ul);
+        };
+
+        const Add_h = (texto, type) => {
+            let h = document.createElement(type);
+            h.innerText=texto;
+            body.appendChild(h);
+        };
+
+        const Add_hr = () => {
+           let line = document.createElement('hr');
+           line.style.color= 'grey';
+           body.appendChild(line);
+        };
+
+        const Add_br = () => {
+            let br = document.createElement('br');
+            body.appendChild(br);
+        };
+        const Add_img = (imgsrc,w='200px', h='200px') => {
+            let img = document.createElement('img');
+            img.setAttribute('src', imgsrc);
+            img.setAttribute('width', w);
+            img.setAttribute('height', h);
+            body.appendChild(img);
+        };
+
+        const Add_a = (href, text, type ='_self') => {
+            let a = document.createElement('a');
+            a.setAttribute('href', href);
+            a.innerHTML=text;
+            a.setAttribute('target', type);
+            body.appendChild(a);
+        };
+        const Add_table = (nrows, ncols) => {
+            let table = document.createElement('table');
+            for (let x=0; x<nrows; x++)
+            {
+                let tr = document.createElement('tr');
+                for (let x=0; x<ncols; x++)
+                {
+                    let t;
+                    if(x==0)
+                        t = document.createElement('th');
+                    else
+                        t = document.createElement('td');
+
+                    t.innerHTML='bb';
+                    tr.appendChild(t); 
+                }
+                table.appendChild(tr); 
+            }
+            body.appendChild(table);
+        };
+           
+           Add_h('BIENVENIDOS!','h1'); 
+           Add_h('A este curso','h2');
+           Add_h('Sobre HTML','h3');
+           Add_br();
+           Add_hr();
+           Add_ul(3,'ul');
+           Add_ul(3,'ol');
+           Add_br();
+           Add_hr();
+           Add_img('https://www.readersdigest.ca/wp-content/uploads/sites/14/2011/01/4-ways-cheer-up-depressed-cat.jpg');
+           Add_hr();
+           Add_br();
+           Add_a('http://www.google.com', 'Ir a google');
+           Add_br();
+           Add_a('http://www.google.com', 'google en otra pestana', '_blank');
+           Add_br();
+           Add_table(2,3);
+        </script>
+    </body>
+</html>
